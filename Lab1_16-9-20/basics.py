@@ -186,6 +186,10 @@ print(thistuple[1])
 #use following syntax to create tuple with one item
 thistuple = ("apple",) 
 print(type(thistuple))
+#or
+thistuple = "apple",
+print(type(thistuple))
+
 
 #set
 thisset = {"apple","banana","cherry"} 
