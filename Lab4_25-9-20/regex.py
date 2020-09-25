@@ -1,11 +1,11 @@
-# email: r"^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$"
+# email: r"^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-]{2,3}$"
 # pincode: r"^[1-9][0-9]{5}$"
 # phone: r"^[0-9]{10}$"
 # password: r"^(?=.*\d+)(?=.*[A-Z]+)(?=.*[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+)(?!.*\s).{4,8}$"
 
 import re
 def check_email(email):
-    regex=re.compile(r"^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$")
+    regex=re.compile(r"^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-]{2,3}$")
     return "valid email" if regex.match(email) else "invalid email"
 
 print(check_email("parthnvaswanigmail.com"))
