@@ -1,14 +1,17 @@
-import random,datetime
+import random
+import datetime
 
 geneSet = " abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!."
 target = "Hello World!"
+
 
 def generate_parent(length):
     genes = []
     while len(genes) < length:
         sampleSize = min(length - len(genes), len(geneSet))
         genes.extend(random.sample(geneSet, sampleSize))
-    return ''.join(genes)
+    return "".join(genes)
+
 
 def get_fitness(guess):
     sum = 0
@@ -16,6 +19,7 @@ def get_fitness(guess):
         if target[i] == guess[i]:
             sum = sum + 1
     return sum
+
 
 def mutate(parent):
     index = random.randrange(0, len(parent))
@@ -25,12 +29,14 @@ def mutate(parent):
         childGenes[index] = alternate
     else:
         childGenes[index] = newGene
-    return ''.join(childGenes)
+    return "".join(childGenes)
+
 
 def display(guess):
     timeDiff = datetime.datetime.now() - startTime
     fitness = get_fitness(guess)
     print(f"{guess}\t{fitness}\t{timeDiff}")
+
 
 random.seed()
 startTime = datetime.datetime.now()
