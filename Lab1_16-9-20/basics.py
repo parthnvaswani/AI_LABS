@@ -99,7 +99,7 @@ print(b[2:5])
 # length
 print(len(b))
 # methods
-# It strips te spaces
+# It strips the spaces
 a = " Hello, World! "
 print(a.strip())
 
